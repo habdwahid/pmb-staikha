@@ -15,10 +15,13 @@ function Layout({ children }) {
                       <img src="/assets/img/staikha.png" alt="STAIKHA" className="img-fluid" />
                     </div>
                     <div className="col-9 col-md-10 text-center">
-                      <h3 className="card-title m-0">STAIKHA</h3>
-                      <h6 className="card-text fw-medium mt-0">Sekolah Tinggi Agama Islam KH. Abdul Kabier</h6>
-                      <p className="card-subtitle small text-muted">Kubang, Petir, Serang</p>
-                      <a href="mailto:infostaikha@staikha.ac.id" className="small text-muted text-decoration-none" target="_blank" rel="noreferrer">infostaikha@staikha.ac.id</a>
+                      <h6 className="card-text fw-medium m-0">Sekolah Tinggi Agama Islam KH. Abdul Kabier</h6>
+                      <h3 className="card-title text-success">(STAIKHA)</h3>
+                      <p className="card-subtitle small text-muted">Jl. KH. Abdul Kabier KM 02, Kubang-Petir-Serang-Banten</p>
+                      <div className="d-flex justify-content-center gap-2">
+                        <a href="tel:085281755964" className="small text-muted text-decoration-none" target="_blank" rel="noreferrer">0852 8175 5964</a>
+                        <a href="mailto:infostaikha@staikha.ac.id" className="small text-muted text-decoration-none" target="_blank" rel="noreferrer">infostaikha@staikha.ac.id</a>
+                      </div>
                     </div>
                   </div>
                 </div>

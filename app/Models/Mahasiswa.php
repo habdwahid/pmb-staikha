@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Ibu;
 use App\Models\Ayah;
+use App\Models\KartuPeserta;
 use App\Models\MahasiswaData;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -44,6 +45,14 @@ class Mahasiswa extends Model
     public function ibu(): HasOne
     {
         return $this->hasOne(Ibu::class);
+    }
+
+    /**
+     * 
+     */
+    public function kartu_peserta(): HasOne
+    {
+        return $this->hasOne(KartuPeserta::class);
     }
 
     /**
