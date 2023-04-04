@@ -2,11 +2,11 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 function Alert({ message, type }) {
-  return message ? (
+  return message && (
     <div className={`alert alert-${type}`}>
       {message}
     </div>
-  ) : null
+  )
 }
 
 Alert.propTypes = {

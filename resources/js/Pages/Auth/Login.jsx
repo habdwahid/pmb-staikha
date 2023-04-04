@@ -31,9 +31,7 @@ function Login({ csrf_token, errors }) {
 
     router.post('/login', {
       _token: csrf_token,
-      email: values.email,
-      password: values.password,
-      remember: values.remember,
+      ...values,
     })
   }
 
@@ -51,16 +49,16 @@ function Login({ csrf_token, errors }) {
                       <img src="/assets/img/staikha.png" alt="STAIKHA" height={80} />
                     </div>
                     <hr className="text-muted" />
-                    <form noValidate onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}>
                       <Alert type="danger" message={errors.status} />
                       <div className="mb-2">
                         <label htmlFor="email" className="form-label">Email</label>
-                        <input type="email" name="email" id="email" className={`form-control ${errors.email || errors.status && 'is-invalid'}`} value={values.email} placeholder="Email" maxLength="128" onChange={handleChange} required />
+                        <input type="email" name="email" id="email" className={`form-control ${errors.email && 'is-invalid' || errors.status && 'is-invalid'}`} value={values.email} placeholder="Email" maxLength="128" onChange={handleChange} required />
                         <InvalidFeedback message={errors.email} />
                       </div>
                       <div className="mb-2">
                         <label htmlFor="password" className="form-label">Password</label>
-                        <input type="password" name="password" id="password" className={`form-control ${errors.email || errors.status && 'is-invalid'}`} value={values.password} placeholder="Password" maxLength="255" onChange={handleChange} required />
+                        <input type="password" name="password" id="password" className={`form-control ${errors.password && 'is-invalid' || errors.status && 'is-invalid'}`} value={values.password} placeholder="Password" maxLength="255" onChange={handleChange} required />
                         <InvalidFeedback message={errors.password} />
                       </div>
                       <div className="form-check mb-4">

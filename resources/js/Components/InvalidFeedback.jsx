@@ -2,11 +2,11 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 function InvalidFeedback({ message }) {
-  return message ? (
+  return message && (
     <div className="invalid-feedback">
       {message}
     </div>
-  ) : null
+  )
 }
 
 InvalidFeedback.propTypes = {
