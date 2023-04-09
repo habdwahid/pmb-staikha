@@ -19,8 +19,8 @@ function Layout({ children }) {
                       <h3 className="card-title text-success">(STAIKHA)</h3>
                       <p className="card-subtitle small text-muted">Jl. KH. Abdul Kabier KM 02, Kubang-Petir-Serang-Banten</p>
                       <div className="d-flex justify-content-center gap-2">
-                        <a href="tel:085281755964" className="small text-muted text-decoration-none" target="_blank" rel="noreferrer">0852 8175 5964</a>
-                        <a href="mailto:infostaikha@staikha.ac.id" className="small text-muted text-decoration-none" target="_blank" rel="noreferrer">infostaikha@staikha.ac.id</a>
+                        <a href="mailto:infostaikha@staikha.ac.id" className="small text-muted text-decoration-none" target="_blank" rel="noreferrer">Email: infostaikha@staikha.ac.id</a>
+                        <a href="tel:6285281755964" className="small text-muted text-decoration-none" target="_blank" rel="noreferrer">Telp: +62 852-8175-5964</a>
                       </div>
                     </div>
                   </div>

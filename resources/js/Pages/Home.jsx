@@ -77,7 +77,7 @@ function Home({
               <div className="col col-lg-8">
                 <div className="card rounded-0 shadow">
                   <div className="card-body">
-                    <h4 className="card-title text-center mb-4">Form Penerimaan Mahasiswa Baru</h4>
+                    <h4 className="card-title text-center mb-4">Form Pendaftaran Mahasiswa Baru</h4>
                     {flash.status ? (
                       <Alert type="success" message={flash.status} />
                     ) : (

@@ -65,7 +65,7 @@ class HomeController extends Controller
 
         return back()
             ->with([
-                'status' => 'Terima kasih telah mendaftar',
+                'status' => 'Terima kasih telah mendaftar. Cek email Anda untuk mencetak tanda bukti pendaftaran',
             ]);
     }
 }

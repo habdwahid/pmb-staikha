@@ -4,6 +4,7 @@ namespace App\Observers\Register;
 
 use App\Models\Mahasiswa;
 use App\Models\MahasiswaData;
+use Illuminate\Support\Facades\Storage;
 
 class MahasiswaDataObserver
 {
@@ -21,6 +22,8 @@ class MahasiswaDataObserver
      */
     public function created(Mahasiswa $mahasiswa): void
     {
+        $fileext = request('kartu_keluarga')->getClientOriginalExtension();
+
         $this->mahasiswaData->mahasiswa_id = $mahasiswa->id;
         $this->mahasiswaData->tempat_lahir = request('tempat_lahir');
         $this->mahasiswaData->tanggal_lahir = request('tanggal_lahir');
@@ -33,7 +36,7 @@ class MahasiswaDataObserver
         $this->mahasiswaData->provinsi = request('provinsi');
         $this->mahasiswaData->kode_pos = request('kode_pos');
         $this->mahasiswaData->asal_sekolah = request('asal_sekolah');
-        $this->mahasiswaData->kartu_keluarga = request('kartu_keluarga')->store('mahasiswa/kartu keluarga');
+        $this->mahasiswaData->kartu_keluarga = request('kartu_keluarga')->storeAs('mahasiswa/kartu keluarga', request('nisn') . '_' . str($mahasiswa->nama_lengkap) . '.' . $fileext);
         $this->mahasiswaData->program_studi_id = request('program_studi');
         $this->mahasiswaData->informasi_id = request('informasi');
 
@@ -45,6 +48,8 @@ class MahasiswaDataObserver
      */
     public function deleted(Mahasiswa $mahasiswa): void
     {
+        Storage::delete($mahasiswa->mahasiswa_data->kartu_keluarga);
+
         $this->mahasiswaData
             ->where('mahasiswa_id', $mahasiswa->id)
             ->delete();

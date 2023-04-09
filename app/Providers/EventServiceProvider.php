@@ -4,14 +4,17 @@ namespace App\Providers;
 
 use App\Models\Mahasiswa;
 use App\Models\MahasiswaData;
+use App\Models\BuktiPendaftaran;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use App\Observers\Register\IbuObserver;
 use App\Observers\Register\NikObserver;
+use App\Observers\Register\PdfObserver;
 use App\Observers\Register\AyahObserver;
 use App\Observers\Register\NisnObserver;
 use App\Observers\Register\PhoneObserver;
 use App\Observers\Register\MahasiswaDataObserver;
+use App\Observers\Register\BuktiPendaftaranObserver;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -37,12 +40,17 @@ class EventServiceProvider extends ServiceProvider
             AyahObserver::class,
             IbuObserver::class,
             MahasiswaDataObserver::class,
+            BuktiPendaftaranObserver::class,
         ]);
 
         MahasiswaData::observe([
             NikObserver::class,
             NisnObserver::class,
             PhoneObserver::class,
+        ]);
+
+        BuktiPendaftaran::observe([
+            PdfObserver::class,
         ]);
     }
 

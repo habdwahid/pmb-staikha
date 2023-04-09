@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BuktiPendaftaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +20,8 @@ Route::get('/', [HomeController::class, 'create'])
 
 Route::post('/', [HomeController::class, 'store'])
     ->name('home.store');
+
+Route::get('bukti-pendaftaran/{buktiPendaftaran}', [BuktiPendaftaranController::class, 'stream'])
+    ->name('pdf.stream');
 
 require __DIR__ . '/auth.php';

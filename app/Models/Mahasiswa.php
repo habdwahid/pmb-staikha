@@ -4,16 +4,17 @@ namespace App\Models;
 
 use App\Models\Ibu;
 use App\Models\Ayah;
-use App\Models\KartuPeserta;
 use App\Models\MahasiswaData;
+use App\Models\BuktiPendaftaran;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Mahasiswa extends Model
 {
-    use HasFactory, HasUuids;
+    use HasFactory, HasUuids, Notifiable;
 
     /**
      * The attributes that aren't mass assignable.
@@ -42,17 +43,17 @@ class Mahasiswa extends Model
     /**
      * 
      */
-    public function ibu(): HasOne
+    public function bukti_pendaftaran(): HasOne
     {
-        return $this->hasOne(Ibu::class);
+        return $this->hasOne(BuktiPendaftaran::class);
     }
 
     /**
      * 
      */
-    public function kartu_peserta(): HasOne
+    public function ibu(): HasOne
     {
-        return $this->hasOne(KartuPeserta::class);
+        return $this->hasOne(Ibu::class);
     }
 
     /**
