@@ -6,7 +6,7 @@ import RegisterForm from '../Components/RegisterForm'
 import Layout from './Layout'
 
 function Home({
-  agama, csrf_token, flash, informasi, jenisKelamin, pendidikan, programStudi,
+  agama, csrf_token, informasi, jenisKelamin, pendidikan, programStudi, status,
 }) {
   const {
     data, setData, post, progress, errors, processing,
@@ -78,8 +78,8 @@ function Home({
                 <div className="card rounded-0 shadow">
                   <div className="card-body">
                     <h4 className="card-title text-center mb-4">Form Pendaftaran Mahasiswa Baru</h4>
-                    {flash.status ? (
-                      <Alert type="success" message={flash.status} />
+                    {status ? (
+                      <Alert type="success" message={status} />
                     ) : (
                       <RegisterForm
                         agama={agama}
@@ -110,11 +110,11 @@ function Home({
 Home.propTypes = {
   agama: PropTypes.arrayOf(PropTypes.object).isRequired,
   csrf_token: PropTypes.string,
-  flash: PropTypes.object,
   informasi: PropTypes.arrayOf(PropTypes.object).isRequired,
   jenisKelamin: PropTypes.arrayOf(PropTypes.object).isRequired,
   pendidikan: PropTypes.arrayOf(PropTypes.object).isRequired,
   programStudi: PropTypes.arrayOf(PropTypes.object).isRequired,
+  status: PropTypes.object,
 }
 
 export default Home

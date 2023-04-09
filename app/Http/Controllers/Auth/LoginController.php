@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Inertia\Inertia;
 use Inertia\Response;
 use Illuminate\Http\Client\Request;
 use App\Http\Controllers\Controller;
@@ -16,7 +15,7 @@ class LoginController extends Controller
      */
     public function create(): Response
     {
-        return Inertia::render('Auth/Login');
+        return inertia('Auth/Login');
     }
 
     /**

@@ -53,6 +53,7 @@ class HomeController extends Controller
             'jenisKelamin' => $jenis_kelamin,
             'pendidikan' => $pendidikan,
             'programStudi' => $program_studi,
+            'status' => session('status'),
         ]);
     }
 
