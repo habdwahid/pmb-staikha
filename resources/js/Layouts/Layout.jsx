@@ -3,7 +3,7 @@ import React from 'react'
 
 function Layout({ children }) {
   return (
-    <main className="py-4">
+    <main className="bg-success py-4">
       <section className="pb-4">
         <div className="container">
           <div className="row justify-content-center">
@@ -14,13 +14,19 @@ function Layout({ children }) {
                     <div className="col-3 col-md-2">
                       <img src="/assets/img/staikha.png" alt="STAIKHA" className="img-fluid" />
                     </div>
+
                     <div className="col-9 col-md-10 text-center">
                       <h6 className="card-text fw-medium m-0">Sekolah Tinggi Agama Islam KH. Abdul Kabier</h6>
                       <h3 className="card-title text-success">(STAIKHA)</h3>
                       <p className="card-subtitle small text-muted">Jl. KH. Abdul Kabier KM 02, Kubang-Petir-Serang-Banten</p>
-                      <div className="d-flex justify-content-center gap-2">
-                        <a href="mailto:infostaikha@staikha.ac.id" className="small text-muted text-decoration-none" target="_blank" rel="noreferrer">Email: infostaikha@staikha.ac.id</a>
-                        <a href="tel:6285281755964" className="small text-muted text-decoration-none" target="_blank" rel="noreferrer">Telp: +62 852-8175-5964</a>
+
+                      <div className="row row-cols-1 row-cols-md-2 justify-content-center">
+                        <div className="col">
+                          <a href="mailto:infostaikha@staikha.ac.id" className="small text-muted text-decoration-none" target="_blank" rel="noreferrer">Email: infostaikha@staikha.ac.id</a>
+                        </div>
+                        <div className="col">
+                          <a href="tel:6285281755964" className="small text-muted text-decoration-none" target="_blank" rel="noreferrer">Telp: +62 852-8175-5964</a>
+                        </div>
                       </div>
                     </div>
                   </div>

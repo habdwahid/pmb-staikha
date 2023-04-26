@@ -6,7 +6,7 @@ function GuestLayout({ children, title }) {
   return (
     <>
       <Head title={`${title} - PMB STAIKHA`} />
-      <main>
+      <main className="bg-success">
         <section>
           <div className="container">
             <div className="row justify-content-center align-items-center min-vh-100">
@@ -16,8 +16,10 @@ function GuestLayout({ children, title }) {
                     <div className="text-center mb-2">
                       <img src="/assets/img/staikha.png" alt="STAIKHA" height={80} />
                     </div>
+
                     <h5 className="fw-normal text-center">{title}</h5>
                     <hr className="text-muted" />
+
                     {children}
                   </div>
                 </div>

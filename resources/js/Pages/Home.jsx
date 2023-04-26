@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import Alert from '../Components/Alert'
 import RegisterForm from '../Components/RegisterForm'
-import Layout from './Layout'
+import Layout from '../Layouts/Layout'
 
 function Home({
   agama, csrf_token, informasi, jenisKelamin, pendidikan, programStudi, status,

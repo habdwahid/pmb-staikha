@@ -15,20 +15,22 @@ function ForgotPassword({ status }) {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    post('/forgot-password')
+    post(route('password.email'))
   }
 
   return (
     <GuestLayout title="Lupa Password">
       <form onSubmit={handleSubmit}>
         <Alert type="success" message={status} />
+
         <div className="mb-4">
           <label htmlFor="email" className="form-label">Email</label>
           <input type="email" name="email" id="email" className={`form-control ${errors.email && 'is-invalid'}`} value={data.email} onChange={(e) => setData({ email: e.target.value })} maxLength={128} placeholder="Email" required />
           <InvalidFeedback message={errors.email} />
         </div>
+
         <div className="d-flex justify-content-between align-items-center">
-          <Link href="/login" className="small">Login</Link>
+          <Link href={route('login')} className="small">Login</Link>
           <button type="submit" className="btn btn-success" disabled={processing}>Kirim</button>
         </div>
       </form>
