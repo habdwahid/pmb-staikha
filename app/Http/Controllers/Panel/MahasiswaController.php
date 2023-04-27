@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Panel;
 
-use App\Models\Nisn;
 use Inertia\Response;
 use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
@@ -24,11 +23,18 @@ class MahasiswaController extends Controller
      */
     public function index(): Response
     {
-        $mahasiswa = $this->mahasiswa->with([
-            'mahasiswa_data' => [
+        $mahasiswa = $this->mahasiswa
+            ->query()
+            ->when(request('search'), function ($query) {
+                $query->where('nama_lengkap', 'LIKE', '%' . request('search') . '%');
+            })
+            ->with([
+                'mahasiswa_data' => [
+                    'program_studi',
+                ],
                 'nisn',
-            ]
-        ])->latest()->get();
+            ])
+            ->paginate(10);
 
         return inertia('Panel/Mahasiswa/MahasiswaIndex', [
             'mahasiswa' => $mahasiswa,
@@ -40,8 +46,9 @@ class MahasiswaController extends Controller
      */
     public function show(Mahasiswa $mahasiswa): Response
     {
-        return inertia('Panel/Mahasiswa/MahasiswaShow', [
-            'mahasiswa' => $mahasiswa->with([
+        $mahasiswa = $this->mahasiswa
+            ->where('id', $mahasiswa->id)
+            ->with([
                 'ayah' => [
                     'pendidikan',
                 ],
@@ -53,12 +60,16 @@ class MahasiswaController extends Controller
                     'agama',
                     'informasi',
                     'jenis_kelamin',
-                    'nik',
-                    'nisn',
-                    'phone',
-                    'program_studi'
-                ]
-            ])->get(),
+                    'program_studi',
+                ],
+                'nik',
+                'nisn',
+                'phone',
+            ])
+            ->first();
+
+        return inertia('Panel/Mahasiswa/MahasiswaShow', [
+            'mahasiswa' => $mahasiswa,
         ]);
     }
 

@@ -6,7 +6,7 @@ import Footer from './Footer'
 function Sidebar({ children }) {
   const { url } = usePage()
 
-  const activeClassName = 'nav-link fw-medium active'
+  const activeClassName = 'nav-link active'
 
   return (
     <div id="layoutSidenav">
