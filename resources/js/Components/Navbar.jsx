@@ -18,7 +18,7 @@ function Navbar() {
         {' '}
         PMB STAIKHA
       </p>
-      <button type="button" className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 text-muted" onClick={handleToggleClick}>
+      <button type="button" className="btn btn-link btn-sm order-1 order-lg-0 ms-auto me-4 ms-lg-2 me-lg-0 text-muted" onClick={handleToggleClick}>
         <i className="fa-solid fa-fw fa-bars" />
       </button>
     </nav>
