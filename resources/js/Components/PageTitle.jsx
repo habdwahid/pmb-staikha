@@ -1,4 +1,4 @@
-import { useForm } from '@inertiajs/react'
+import { Link, useForm } from '@inertiajs/react'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -31,7 +31,13 @@ function PageTitle({ auth, title }) {
             {auth.user.name}
           </button>
 
-          <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+          <ul className="dropdown-menu dropdown-menu-end px-2" aria-labelledby="userDropdown">
+            <li>
+              <Link href="#!" className="dropdown-item">Pengaturan</Link>
+            </li>
+            <li>
+              <hr className="dropdown-divider" />
+            </li>
             <li>
               <button type="submit" className="dropdown-item" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</button>
             </li>

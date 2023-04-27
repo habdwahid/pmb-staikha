@@ -266,6 +266,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@kurkle/color@npm:^0.3.0":
+  version: 0.3.2
+  resolution: "@kurkle/color@npm:0.3.2"
+  checksum: 79e97b31f8f6efb28c69d373f94b0c7480226fe8ec95221f518ac998e156444a496727ce47de6d728eb5c3369288e794cba82cae34253deb0d472d3bfe080e49
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -627,6 +634,25 @@ __metadata:
     ansi-styles: ^4.1.0
     supports-color: ^7.1.0
   checksum: fe75c9d5c76a7a98d45495b91b2172fa3b7a09e0cc9370e5c8feb1c567b85c4288e2b3fded7cfdd7359ac28d6b3844feb8b82b8686842e93d23c827c417e83fc
+  languageName: node
+  linkType: hard
+
+"chart.js@npm:^4.2.1":
+  version: 4.2.1
+  resolution: "chart.js@npm:4.2.1"
+  dependencies:
+    "@kurkle/color": ^0.3.0
+  checksum: 7319fdfd1e29812e87bbc07737e8c9072ff659bbc09ade8dd262f83424cd7e48f89afe5220e11e002c9f236883fae3f3adb8adc16acb4682b0ddcc0b661c3af9
+  languageName: node
+  linkType: hard
+
+"chartjs-plugin-autocolors@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "chartjs-plugin-autocolors@npm:0.2.2"
+  peerDependencies:
+    "@kurkle/color": ^0.3.1
+    chart.js: ">=2"
+  checksum: 733bec6107a2b195f20bd81ca678b41013bc77286eb66cbc97acc012ae855c995746065a37eda3000128e0648ae7da549693bf3276cfa006d7a22201f19dab0b
   languageName: node
   linkType: hard
 
@@ -2610,6 +2636,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-chartjs-2@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "react-chartjs-2@npm:5.2.0"
+  peerDependencies:
+    chart.js: ^4.1.1
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: ace702185be1450e5888a8bcd8b5fc1995067e3b11d236764a67f5567a3d7c32ff16923b8d48d3d39bda6e45135da6c044c9b43fbe8e1978f95aca9d2c0ce348
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:^18.2.0":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
@@ -2771,6 +2807,8 @@ __metadata:
   dependencies:
     "@inertiajs/react": ^1.0.2
     axios: ^1.1.2
+    chart.js: ^4.2.1
+    chartjs-plugin-autocolors: ^0.2.2
     eslint: ^7.32.0 || ^8.2.0
     eslint-config-airbnb: latest
     eslint-plugin-import: ^2.25.3
@@ -2780,6 +2818,7 @@ __metadata:
     laravel-vite-plugin: ^0.7.2
     prop-types: ^15.8.1
     react: ^18.2.0
+    react-chartjs-2: ^5.2.0
     react-dom: ^18.2.0
     vite: ^4.0.0
   languageName: unknown
