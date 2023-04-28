@@ -1,11 +1,12 @@
 /* eslint-disable no-mixed-operators */
 import { Link, useForm } from '@inertiajs/react'
+import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import Alert from '../../Components/Alert'
 import InvalidFeedback from '../../Components/InvalidFeedback'
 import GuestLayout from '../../Layouts/GuestLayout'
 
-function Login() {
+function Login({ status }) {
   const {
     data, errors, setData, post, processing, reset,
   } = useForm({
@@ -44,6 +45,7 @@ function Login() {
     <GuestLayout title="Login">
       <form onSubmit={handleSubmit}>
         <Alert type="danger" message={errors.status} />
+        <Alert type="success" message={status} />
 
         <div className="mb-2">
           <label htmlFor="email" className="form-label">Email</label>
@@ -69,6 +71,10 @@ function Login() {
       </form>
     </GuestLayout>
   )
+}
+
+Login.propTypes = {
+  status: PropTypes.string,
 }
 
 export default Login

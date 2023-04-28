@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Auth;
 use Inertia\Response;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\RedirectResponse;
-use App\Http\Requests\Auth\LoginRequest;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
+use App\Providers\RouteServiceProvider;
+use App\Http\Requests\Auth\LoginRequest;
 
 class LoginController extends Controller
 {
@@ -17,7 +17,9 @@ class LoginController extends Controller
      */
     public function create(): Response
     {
-        return inertia('Auth/Login');
+        return inertia('Auth/Login', [
+            'status' => session('status'),
+        ]);
     }
 
     /**
