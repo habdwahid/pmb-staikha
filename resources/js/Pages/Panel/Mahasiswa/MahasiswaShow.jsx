@@ -159,7 +159,7 @@ function MahasiswaShow({ auth, mahasiswa }) {
                   <td>Bukti Pendaftaran</td>
                   <td className="text-end">:</td>
                   <td>
-                    <a href={route('panel.bukti-pendaftaran.show', mhs.bukti_pendaftaran.id)} className="btn-sm btn-primary text-decoration-none">
+                    <a href={route('panel.bukti-pendaftaran.show', mhs.bukti_pendaftaran.id)} className="btn-sm btn-primary text-decoration-none" target="_blank" rel="noreferrer">
                       <i className="fa-solid fa-fw fa-eye me-1" />
                       Lihat
                     </a>
