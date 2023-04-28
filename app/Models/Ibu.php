@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use App\Models\Mahasiswa;
 use App\Models\Pendidikan;
 use Illuminate\Database\Eloquent\Model;
@@ -28,6 +29,15 @@ class Ibu extends Model
      * @var string
      */
     protected $table = 'ibu';
+
+    /**
+     * 
+     */
+    public function getTanggalLahirAttribute()
+    {
+        return Carbon::parse($this->attributes['tanggal_lahir'])
+            ->isoFormat('DD MMMM Y');
+    }
 
     /**
      * 

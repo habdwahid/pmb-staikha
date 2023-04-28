@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use App\Models\Nik;
 use App\Models\Nisn;
 use App\Models\Agama;
@@ -42,6 +43,15 @@ class MahasiswaData extends Model
     public function agama(): BelongsTo
     {
         return $this->belongsTo(Agama::class);
+    }
+
+    /**
+     * 
+     */
+    public function getTanggalLahirAttribute()
+    {
+        return Carbon::parse($this->attributes['tanggal_lahir'])
+            ->isoFormat('DD MMMM Y');
     }
 
     /**
