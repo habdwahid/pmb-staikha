@@ -3,7 +3,7 @@ import React from 'react'
 
 function Layout({ children }) {
   return (
-    <main className="bg-success py-4">
+    <main className="bg-success py-4" style={{ minHeight: '100vh' }}>
       <section className="pb-4">
         <div className="container">
           <div className="row justify-content-center">
