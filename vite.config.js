@@ -9,6 +9,8 @@ export default defineConfig({
     react(),
   ],
   server: {
-    open: true,
+    base: '/',
+    host: true,
+    https: true,
   },
 });
