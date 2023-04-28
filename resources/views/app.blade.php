@@ -21,7 +21,6 @@
   @inertiaHead
   <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
   @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"])
-  @viteReactRefresh
 </head>
 
 <body>
