@@ -37,8 +37,8 @@ class SendEmailBuktiPendaftaran extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
+            ->view('emails.bukti-pendaftaran')
             ->subject('Tanda Bukti Pendaftaran - STAIKHA')
-            ->line('Berikut adalah tanda bukti pendaftaran')
             ->attach(public_path() . '/storage/' . $this->buktiPendaftaran->bukti_pendaftaran, [
                 'as' => str($this->buktiPendaftaran->bukti_pendaftaran)->after('bukti pendaftaran/'),
                 'mime' => 'application/pdf',
