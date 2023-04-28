@@ -34,6 +34,7 @@ class MahasiswaController extends Controller
                 ],
                 'nisn',
             ])
+            ->latest()
             ->paginate(10);
 
         return inertia('Panel/Mahasiswa/MahasiswaIndex', [
