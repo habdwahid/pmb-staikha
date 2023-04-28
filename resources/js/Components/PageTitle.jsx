@@ -33,7 +33,7 @@ function PageTitle({ auth, title }) {
 
           <ul className="dropdown-menu dropdown-menu-end px-2" aria-labelledby="userDropdown">
             <li>
-              <Link href="#!" className="dropdown-item">Pengaturan</Link>
+              <Link href={route('panel.settings.edit')} className="dropdown-item">Pengaturan</Link>
             </li>
             <li>
               <hr className="dropdown-divider" />

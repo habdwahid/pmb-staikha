@@ -9,6 +9,7 @@ import BarChart from '../../Components/BarChart'
 import PageTitle from '../../Components/PageTitle'
 import PieChart from '../../Components/PieChart'
 import AuthLayout from '../../Layouts/AuthLayout'
+import Alert from '../../Components/Alert'
 
 ChartJS.register(
   ArcElement,
@@ -37,6 +38,7 @@ function Dashboard({
   mhsFemale,
   mhsMalePerYear,
   mhsFemalePerYear,
+  status,
   year,
 }) {
   const barChartData = {
@@ -74,6 +76,12 @@ function Dashboard({
 
   return (
     <AuthLayout title="Dashboard">
+      {status && (
+        <div className="mt-2">
+          <Alert type="success" message={status} />
+        </div>
+      )}
+
       <PageTitle auth={auth} title="Dashboard" />
 
       <div className="row justify-content-center">
@@ -180,6 +188,7 @@ Dashboard.propTypes = {
   mhsFemale: PropTypes.number.isRequired,
   mhsMalePerYear: PropTypes.array.isRequired,
   mhsFemalePerYear: PropTypes.array.isRequired,
+  status: PropTypes.string,
   year: PropTypes.array.isRequired,
 }
 

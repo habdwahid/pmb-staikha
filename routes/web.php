@@ -6,6 +6,7 @@ use App\Http\Controllers\Panel\DashboardController;
 use App\Http\Controllers\Panel\KartuKeluargaController;
 use App\Http\Controllers\Panel\MahasiswaController;
 use App\Http\Controllers\Panel\PdfController;
+use App\Http\Controllers\Panel\SettingsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,12 @@ Route::middleware('auth')
                 Route::get('mahasiswa/{mahasiswa}', 'show')
                     ->name('mahasiswa.show');
             });
+
+        Route::get('settings', [SettingsController::class, 'edit'])
+            ->name('settings.edit');
+
+        Route::put('settings', [SettingsController::class, 'update'])
+            ->name('settings.update');
 
         Route::get('bukti-pendaftaran/{buktiPendaftaran}', [PdfController::class, 'show'])
             ->name('bukti-pendaftaran.show');

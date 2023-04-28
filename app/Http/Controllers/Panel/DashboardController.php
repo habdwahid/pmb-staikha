@@ -137,6 +137,7 @@ class DashboardController extends Controller
             'mhsFemale' => $mhsFemale,
             'mhsMalePerYear' => $mhsMalePerYear,
             'mhsFemalePerYear' => $mhsFemalePerYear,
+            'status' => session('status'),
             'year' => $year,
         ]);
     }
